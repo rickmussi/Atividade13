@@ -1,5 +1,8 @@
 package br.edu.utfpr;
 
+import br.edu.utfpr.issue.FindIssuesPage;
+import br.edu.utfpr.issue.IssuesPage;
+import br.edu.utfpr.issue.SetIssuesPage;
 import br.edu.utfpr.po.AddCadastroPage;
 import br.edu.utfpr.po.CadastroPage;
 import br.edu.utfpr.po.FindCadastroPage;
@@ -73,6 +76,51 @@ public class CadastroTest {
         addCadastroPage.clickFindButton();
 
         assertFalse(findCadastroPage.gravadoSucesso());
+    }
+
+    @Test
+    public void testFiltroIssue() {
+        IssuesPage issuePage = new IssuesPage(driver);
+
+        FindIssuesPage findIssuesPage = new FindIssuesPage(driver);
+        SetIssuesPage setIssuesPage = findIssuesPage.goToSetIssues();
+        SetIssuesPage filtro = setIssuesPage.AddFiltro("Tracker")
+                .AddFiltro("Priority")
+                .AddFiltro("Author")
+                .AddFiltro("Category")
+                .AddFiltro("Subject")
+                .AddFiltro("Closed")
+                .AddFiltro("Blocks");
+
+        assertEquals("Tracker", setIssuesPage.vefificarFiltro_02());
+        assertEquals("Priority", setIssuesPage.vefificarFiltro_03());
+        assertEquals("Author", setIssuesPage.vefificarFiltro_04());
+        assertEquals("Category", setIssuesPage.vefificarFiltro_05());
+        assertEquals("Subject", setIssuesPage.vefificarFiltro_06());
+        assertEquals("Closed", setIssuesPage.vefificarFiltro_07());
+        assertEquals("Blocks", setIssuesPage.vefificarFiltro_08());
+
+    }
+
+    @Test
+    public void testCheckFiltros() {
+        IssuesPage issuePage = new IssuesPage(driver);
+
+        FindIssuesPage findIssuesPage = new FindIssuesPage(driver);
+        SetIssuesPage setIssuesPage = findIssuesPage.goToSetIssues();
+        SetIssuesPage filtro = setIssuesPage.AddFiltro("Tracker")
+                .AddFiltro("Priority")
+                .AddFiltro("Author")
+                .AddFiltro("Category")
+                .AddFiltro("Subject")
+                .AddFiltro("Closed")
+                .AddFiltro("Blocks");
+
+        setIssuesPage.filtro_03_demarcarCheck();
+
+        assertTrue(setIssuesPage.vefificarFiltro_02_isCheck());
+        assertFalse(setIssuesPage.vefificarFiltro_03_isCheck());
+
     }
 
     @Ignore
