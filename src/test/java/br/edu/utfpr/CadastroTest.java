@@ -37,7 +37,7 @@ public class CadastroTest {
 
     @After
     public void after() {
-        //driver.close();
+        driver.close();
     }
 
     @Test
@@ -50,8 +50,8 @@ public class CadastroTest {
                 .setUserLastName("Da Silva")
                 .setUserPassword("1234")
                 .setUserPasswordConfirma("1234")
-                .setUserEmail("joao1@hotmail.com")//mudar sempre o email para conseguir realizar o cadastro
-                .setUserLogin("jao1")//mudar sempre o login para conseguir realizar o cadastro
+                .setUserEmail("joao12@hotmail.com")//mudar sempre o email para conseguir realizar o cadastro
+                .setUserLogin("joao12")//mudar sempre o login para conseguir realizar o cadastro
                 .setUserCustom("Joao");
 
         addCadastroPage.clickFindButton();
@@ -65,62 +65,17 @@ public class CadastroTest {
 
         FindCadastroPage findCadastroPage = new FindCadastroPage(driver);
         AddCadastroPage addCadastroPage = findCadastroPage.goToAddCadastro();
-        AddCadastroPage cad = addCadastroPage.setUserFirstName("Joao")
-                .setUserLastName("Da Silva")
+        AddCadastroPage cad = addCadastroPage.setUserFirstName("Ricardo")
+                .setUserLastName("Mussi")
                 .setUserPassword("1234")
                 .setUserPasswordConfirma("1234")
-                .setUserEmail("joao1@hotmail.com")
-                .setUserLogin("joao1")
-                .setUserCustom("Joao");
+                .setUserEmail("rickmussi@hotmail.com")
+                .setUserLogin("rickmussi")
+                .setUserCustom("rickmussi");
 
         addCadastroPage.clickFindButton();
 
         assertFalse(findCadastroPage.gravadoSucesso());
-    }
-
-    @Test
-    public void testFiltroIssue() {
-        IssuesPage issuePage = new IssuesPage(driver);
-
-        FindIssuesPage findIssuesPage = new FindIssuesPage(driver);
-        SetIssuesPage setIssuesPage = findIssuesPage.goToSetIssues();
-        SetIssuesPage filtro = setIssuesPage.AddFiltro("Tracker")
-                .AddFiltro("Priority")
-                .AddFiltro("Author")
-                .AddFiltro("Category")
-                .AddFiltro("Subject")
-                .AddFiltro("Closed")
-                .AddFiltro("Blocks");
-
-        assertEquals("Tracker", setIssuesPage.vefificarFiltro_02());
-        assertEquals("Priority", setIssuesPage.vefificarFiltro_03());
-        assertEquals("Author", setIssuesPage.vefificarFiltro_04());
-        assertEquals("Category", setIssuesPage.vefificarFiltro_05());
-        assertEquals("Subject", setIssuesPage.vefificarFiltro_06());
-        assertEquals("Closed", setIssuesPage.vefificarFiltro_07());
-        assertEquals("Blocks", setIssuesPage.vefificarFiltro_08());
-
-    }
-
-    @Test
-    public void testCheckFiltros() {
-        IssuesPage issuePage = new IssuesPage(driver);
-
-        FindIssuesPage findIssuesPage = new FindIssuesPage(driver);
-        SetIssuesPage setIssuesPage = findIssuesPage.goToSetIssues();
-        SetIssuesPage filtro = setIssuesPage.AddFiltro("Tracker")
-                .AddFiltro("Priority")
-                .AddFiltro("Author")
-                .AddFiltro("Category")
-                .AddFiltro("Subject")
-                .AddFiltro("Closed")
-                .AddFiltro("Blocks");
-
-        setIssuesPage.filtro_03_demarcarCheck();
-
-        assertTrue(setIssuesPage.vefificarFiltro_02_isCheck());
-        assertFalse(setIssuesPage.vefificarFiltro_03_isCheck());
-
     }
 
     @Ignore
