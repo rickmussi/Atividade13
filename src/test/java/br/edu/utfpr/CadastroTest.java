@@ -50,8 +50,8 @@ public class CadastroTest {
                 .setUserLastName("Da Silva")
                 .setUserPassword("1234")
                 .setUserPasswordConfirma("1234")
-                .setUserEmail("joao12@hotmail.com")//mudar sempre o email para conseguir realizar o cadastro
-                .setUserLogin("joao12")//mudar sempre o login para conseguir realizar o cadastro
+                .setUserEmail("joao13@hotmail.com")//mudar sempre o email para conseguir realizar o cadastro
+                .setUserLogin("joao13")//mudar sempre o login para conseguir realizar o cadastro
                 .setUserCustom("Joao");
 
         addCadastroPage.clickFindButton();
