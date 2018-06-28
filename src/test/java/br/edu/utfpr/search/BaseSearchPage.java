@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.utfpr.issue;
+package br.edu.utfpr.search;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -12,10 +12,10 @@ import org.openqa.selenium.support.PageFactory;
  *
  * @author Edmundo
  */
-public class BaseIssuesPage {
+public class BaseSearchPage {
     protected WebDriver driver;
     
-    public BaseIssuesPage(WebDriver driver) {
+    public BaseSearchPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
