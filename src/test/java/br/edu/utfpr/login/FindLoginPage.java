@@ -69,10 +69,10 @@ public class FindLoginPage extends BasePage {
 //    }
     public boolean loginSucesso() {
         switch (dr.getCurrentUrl()) {
-            case "http://www.redmine.org/my/page":
-                return dr.getCurrentUrl().equals("http://www.redmine.org/my/page");
+            case "http://demo.redmine.org/my/page":
+                return dr.getCurrentUrl().equals("http://demo.redmine.org/my/page");
             case "http://www.redmine.org/":
-                return dr.getCurrentUrl().equals("http://www.redmine.org/");
+                return dr.getCurrentUrl().equals("http://demo.redmine.org/");
             default:
                 return false;
         }

@@ -14,6 +14,6 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage extends BasePage{
     public LoginPage(WebDriver driver) {
         super(driver);
-        driver.get("http://www.redmine.org/login");
+        driver.get("http://demo.redmine.org/login");
     }      
 }

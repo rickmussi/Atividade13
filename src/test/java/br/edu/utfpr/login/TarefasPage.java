@@ -14,6 +14,6 @@ import org.openqa.selenium.WebDriver;
 public class TarefasPage extends BasePage{
     public TarefasPage(WebDriver driver) {
         super(driver);
-        driver.get("https://www.redmine.org/projects/redmine/issues/new");
+        driver.get("https://demo.redmine.org/projects/redmine/issues/new");
     }      
 }

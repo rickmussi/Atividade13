@@ -1,8 +1,5 @@
 package br.edu.utfpr;
 
-import br.edu.utfpr.issue.FindIssuesPage;
-import br.edu.utfpr.issue.IssuesPage;
-import br.edu.utfpr.issue.SetIssuesPage;
 import br.edu.utfpr.po.AddCadastroPage;
 import br.edu.utfpr.po.CadastroPage;
 import br.edu.utfpr.po.FindCadastroPage;
@@ -37,7 +34,7 @@ public class CadastroTest {
 
     @After
     public void after() {
-        driver.close();
+        //driver.close();
     }
 
     @Test
@@ -50,9 +47,9 @@ public class CadastroTest {
                 .setUserLastName("Da Silva")
                 .setUserPassword("1234")
                 .setUserPasswordConfirma("1234")
-                .setUserEmail("joao13@hotmail.com")//mudar sempre o email para conseguir realizar o cadastro
-                .setUserLogin("joao13")//mudar sempre o login para conseguir realizar o cadastro
-                .setUserCustom("Joao");
+                .setUserEmail("joao16@hotmail.com")//mudar sempre o email para conseguir realizar o cadastro
+                .setUserLogin("joao16");//mudar sempre o login para conseguir realizar o cadastro
+                
 
         addCadastroPage.clickFindButton();
 
@@ -70,8 +67,7 @@ public class CadastroTest {
                 .setUserPassword("1234")
                 .setUserPasswordConfirma("1234")
                 .setUserEmail("rickmussi@hotmail.com")
-                .setUserLogin("rickmussi")
-                .setUserCustom("rickmussi");
+                .setUserLogin("rickmussi");
 
         addCadastroPage.clickFindButton();
 

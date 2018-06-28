@@ -15,6 +15,6 @@ public class CadastroPage extends BasePage{
 
     public CadastroPage(WebDriver driver) {
         super(driver);
-        driver.get("http://www.redmine.org/account/register");
+        driver.get("http://demo.redmine.org/account/register");
     }    
 }

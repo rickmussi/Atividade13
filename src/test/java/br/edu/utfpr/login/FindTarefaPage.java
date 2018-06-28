@@ -68,7 +68,7 @@ public class FindTarefaPage extends BasePage {
 //        return true;
 //    }
     public boolean cadastroSucesso() {
-        return dr.getCurrentUrl().contains("https://www.redmine.org/issues/");
+        return dr.getCurrentUrl().contains("https://demo.redmine.org/issues/");
     }
 
     public String getUrl() {

@@ -16,6 +16,6 @@ public class IssuesPage extends BaseIssuesPage{
 
     public IssuesPage(WebDriver driver) {
         super(driver);
-        driver.get("http://www.redmine.org/projects/redmine/issues");
+        driver.get("http://demo.redmine.org/projects/redmine/issues");
     }    
 }
