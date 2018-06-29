@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.utfpr.issue;
+package br.edu.utfpr.search;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,14 +13,14 @@ import org.openqa.selenium.support.FindBy;
  *
  * @author Edmundo
  */
-public class FindIssuesPage extends IssuesPage {
+public class FindSearchPage extends SearchPage {
 
     @FindBy(xpath = "/html/head/title")
     WebElement title;
 
     WebDriver dr;
 
-    public FindIssuesPage(WebDriver driver) {
+    public FindSearchPage(WebDriver driver) {
         super(driver);
         dr = driver;
     }
@@ -29,10 +29,10 @@ public class FindIssuesPage extends IssuesPage {
         return title;
     }
 
-    public SetIssuesPage goToSetIssues() {
+    public SetSearchPage goToSetSearch() {
         //btnEnviar.click();
 
-        return new SetIssuesPage(driver);
+        return new SetSearchPage(driver);
     }
 
     public String getUrl() {
